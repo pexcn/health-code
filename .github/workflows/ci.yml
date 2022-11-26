@@ -51,5 +51,7 @@ jobs:
           tags: |
             ${{ github.repository }}:latest
             ${{ github.repository }}:${{ env.CURRENT_DATE }}
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ env.CURRENT_DATE }}
           platforms: linux/amd64
           push: true
