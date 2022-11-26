@@ -7,12 +7,10 @@ FROM node:19-alpine as builder
 #
 # Build stage
 #
-ARG VERSION=29964454b5dae9d5c1f676eadab9f150e085e603
 RUN apk update \
   && apk add --no-cache --virtual .build-deps git make \
   && git clone https://codeberg.org/ilovexjp/health-code-simulator.git \
   && cd health-code-simulator \
-  && git checkout $VERSION \
   && npm i -g uglify-js clean-css-cli html-minifier sass \
   && make build \
   && cp -r build /srv/health-code \
