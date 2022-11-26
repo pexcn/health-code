@@ -26,8 +26,6 @@ RUN apk update \
 #
 FROM nginx:1.22.1-alpine
 
-RUN find /etc/nginx -type f -delete
-
 COPY --from=builder /srv/health-code /srv/health-code
 COPY nginx.conf /etc/nginx/
-COPY health-code-local.conf /etc/nginx/conf.d/
+COPY default.conf /etc/nginx/conf.d/
