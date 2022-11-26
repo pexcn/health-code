@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  nginx:
+  health-code:
     image: pexcn/health-code:latest
     container_name: health-code
     restart: unless-stopped
