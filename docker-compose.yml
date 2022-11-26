@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  nginx:
+    image: pexcn/health-code:20221126
+    container_name: health-code
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      TZ: Asia/Taipei
+    volumes:
+      - ./health-code-data/conf/health-code.conf:/etc/nginx/conf.d/health-code.conf
+      - ./health-code-data/cert:/etc/nginx/cert
