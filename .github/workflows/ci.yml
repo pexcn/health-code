@@ -8,8 +8,8 @@ on:
       - 'docker-compose.yml'
       - '**.md'
   schedule:
-    # workwaround for cannot set timezone, cron will start on UTC+8 22:00
-    - cron: "0 16 * * *"
+    # daily at 22:00 UTC
+    - cron: "0 14 * * *"
 
 jobs:
   build-and-push:
