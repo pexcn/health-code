@@ -27,7 +27,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -53,5 +53,5 @@ jobs:
             ${{ github.repository }}:${{ env.CURRENT_DATE }}
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ env.CURRENT_DATE }}
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           push: true
