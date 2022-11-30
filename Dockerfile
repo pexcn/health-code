@@ -8,11 +8,11 @@ FROM node:19-alpine as builder
 # Build stage
 #
 RUN apk update \
-  && apk add --no-cache --virtual .build-deps git make \
+  && apk add --no-cache --virtual .build-deps git \
   && git clone https://codeberg.org/ilovexjp/health-code-simulator.git \
   && cd health-code-simulator \
-  && npm i -g uglify-js clean-css-cli html-minifier sass \
-  && make build \
+  && npm install \
+  && npm run build \
   && cp -r build /srv/health-code \
   && cd - \
   && rm -r health-code-simulator \
