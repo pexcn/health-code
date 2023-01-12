@@ -9,7 +9,7 @@ on:
       - '**.md'
   schedule:
     # daily at 22:00 UTC
-    - cron: "0 14 * * *"
+    #- cron: "0 14 * * *"
 
 jobs:
   build-and-push:
